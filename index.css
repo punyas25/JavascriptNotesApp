@@ -14,3 +14,7 @@
     width: 100%;
     margin-bottom: 10px;
 }
+
+.save-edit-btn {
+    display: none;
+}

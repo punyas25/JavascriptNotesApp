@@ -9,24 +9,18 @@
 <body>
   <div class='container'>
     <div class='input-container wrapper'>
-        <form class='noteForm' id='noteForm'>
+        <form class='note-form' id='note-form' >
             <input type='text' id='title' class='title' placeholder='Title'>
             <textarea id='description' class='description' placeholder='Description'></textarea>
-            <input type='submit' class='submitBtn' onclick='saveNote();'>
-            
+            <input type='submit' class='submit-btn' onclick='saveNote();'>
+            <p class='error-message' id='error-message'></p>
+            <input type='button' class='save-edit-btn' onclick='saveEditedNote(this);' value='Save Edit'>
         </form>
     </div>
     <div class='search-container wrapper'>
         <input type='text' id='search' name='search'>
     </div>
     <div class='list-container wrapper'>
-        <div class='item-wrapper'>
-            <img>
-            <p>Title</p>
-            <p>Desc</p>
-            <input type='button' id='editBtn' value='Edit'>
-            <input type='button' id='deleteBtn' value='Delete'>
-        </div>
     </div>
   </div>
   <script type='text/javascript' src='index.js'></script>
