@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ln='en'>
+<head>
+  <meta charset='UTF-8' name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+  <link rel='stylesheet' type='text/css' href='index.css'>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <title>Notes App</title>
+</head>
+<body>
+  <div class='container'>
+    <div class='input-container wrapper'>
+        <form class='noteForm' id='noteForm'>
+            <input type='text' id='title' class='title' placeholder='Title'>
+            <textarea id='description' class='description' placeholder='Description'></textarea>
+            <input type='submit' class='submitBtn' onclick='saveNote();'>
+            
+        </form>
+    </div>
+    <div class='search-container wrapper'>
+        <input type='text' id='search' name='search'>
+    </div>
+    <div class='list-container wrapper'>
+        <div class='item-wrapper'>
+            <img>
+            <p>Title</p>
+            <p>Desc</p>
+            <input type='button' id='editBtn' value='Edit'>
+            <input type='button' id='deleteBtn' value='Delete'>
+        </div>
+    </div>
+  </div>
+  <script type='text/javascript' src='index.js'></script>
+</body>
+</html>
