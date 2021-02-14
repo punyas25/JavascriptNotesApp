@@ -2,19 +2,15 @@
     margin: 30px auto;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 .wrapper {
     width: 50vw;
-    margin: 0 auto;
-    /* border: 1px solid grey; */
-}
-
-.input-container {
-    background: linear-gradient(60deg, #7FF4F5, #7FB9F5);
-    padding: 60px;
+    margin: 10px auto;
+    border: 1px solid grey;
     border-radius: 3px;
 }
-
+.input-container {
+    padding: 30px 60px;
+}
 .title, .description {
     display: block;
     width: 100%;
@@ -28,7 +24,6 @@
     outline: none;
     font-size: 14px;
 }
-
 .submit-btn, .save-edit-btn {
     width: 100%;
     padding: 10px;
@@ -39,17 +34,18 @@
     color: #484B4E;
     font-size: 14px;
 }
-
-
+.custom-btn:hover {
+    background-color: #9b9ea3;
+    color: #ffffff;
+    border-color: #9b9ea3;
+}
 .save-edit-btn {
     margin-top: 10px;
     display: none;
 }
-
 .search-container, .list-container {
-    margin: 10px auto;
+    padding: 20px 60px;
 }
-
 .search {
     font-family: Arial, Helvetica, sans-serif;
     background-color: transparent;
@@ -60,28 +56,25 @@
     width: 70%;
     display: inline;
 }
-
 .clear-btn {
     float: right;
     border: 1px solid #484B4E;
     background-color: transparent;
     border-radius: 50%;
-    padding: 5px  7px;
+    padding: 5px 7px;
+    font-weight: bold;
 }
-
 .item-wrapper {
     border: 1px solid #484B4E;
     border-radius: 3px;
     margin-bottom: 10px;
     padding: 10px;
 }
-
 .item-title {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     margin: 5px;
 }
-
 .item-description {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -90,9 +83,7 @@
     padding: 3px;
     overflow: hidden;
 }
-
 .edit-btn, .delete-btn {
-    /* width: 100%; */
     padding: 5px;
     border-radius: 3px;
     border: 1px solid #484B4E;
@@ -102,7 +93,18 @@
     font-size: 12px;
     margin-top: 10px;
 }
-
 .edit-btn {
     margin-right: 10px;
+}
+@media only screen and (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+    }
+    .wrapper {
+        width: 70vw;
+        padding: 20px 30px;
+    }
+    .title, .description {
+        padding: 10px 0px 10px 5px;
+    }
 }

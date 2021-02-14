@@ -1,5 +1,4 @@
 let notes = JSON.parse(localStorage.getItem('notes')) || [];
-let count = (notes) ? notes.length : 0;
 
 displayNote = (note, i) => {
     var noteElement = [
@@ -10,7 +9,7 @@ displayNote = (note, i) => {
         note.title,
         '</p><p class="item-description">',
         note.description,
-        '</p><input type="button" class="edit-btn" value="Edit" onclick="editNote(this);"><input type="button" class="delete-btn" value="Delete" onclick="deleteNote(this);"></div>'
+        '</p><input type="button" class="edit-btn custom-btn" value="Edit" onclick="editNote(this);"><input type="button" class="delete-btn custom-btn" value="Delete" onclick="deleteNote(this);"></div>'
       ];
     return $(noteElement.join(''));
 }
@@ -60,6 +59,7 @@ editNote = (element) => {
     $('.description').html(selectedNote.description);
     $('.note-form').attr('noteid', noteid);
     $('.save-edit-btn').show();
+    $('.submit-btn').hide();
 }
 
 deleteNote = (element) => {
@@ -99,8 +99,6 @@ searchNote = (event) => {
         });
         $('.list-container').html('');
         $('.list-container').append(newList);
-
-        console.log(notesMatch);
     }
 }
 

@@ -9,16 +9,17 @@
 <body>
   <div class='container'>
     <div class='input-container wrapper'>
+        <h1 >Notes Application</h1>
         <form class='note-form' id='note-form' >
             <input type='text' id='title' class='title' placeholder='TITLE'>
             <textarea id='description' class='description' placeholder='DESCRIPTION'></textarea>
-            <input type='submit' class='submit-btn' onclick='saveNote();'>
-            <input type='button' class='save-edit-btn' onclick='saveEditedNote(this);' value='Save Edit'>
+            <input type='submit' class='submit-btn custom-btn' onclick='saveNote();' value='Save Note'>
+            <input type='button' class='save-edit-btn custom-btn' onclick='saveEditedNote(this);' value='Save Edit'>
         </form>
     </div>
     <div class='search-container wrapper'>
         <input type='text' class='search' name='search' placeholder='Search ...' onkeypress='searchNote(event)'>
-        <input type='button' class='clear-btn' onclick='clearSearchText()' value='X'>
+        <input type='button' class='clear-btn custom-btn' onclick='clearSearchText()' value='X'>
     </div>
     <div class='list-container wrapper'>
     </div>
