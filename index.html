@@ -10,15 +10,15 @@
   <div class='container'>
     <div class='input-container wrapper'>
         <form class='note-form' id='note-form' >
-            <input type='text' id='title' class='title' placeholder='Title'>
-            <textarea id='description' class='description' placeholder='Description'></textarea>
+            <input type='text' id='title' class='title' placeholder='TITLE'>
+            <textarea id='description' class='description' placeholder='DESCRIPTION'></textarea>
             <input type='submit' class='submit-btn' onclick='saveNote();'>
-            <p class='error-message' id='error-message'></p>
             <input type='button' class='save-edit-btn' onclick='saveEditedNote(this);' value='Save Edit'>
         </form>
     </div>
     <div class='search-container wrapper'>
-        <input type='text' id='search' name='search'>
+        <input type='text' class='search' name='search' placeholder='Search ...' onkeypress='searchNote(event)'>
+        <input type='button' class='clear-btn' onclick='clearSearchText()' value='X'>
     </div>
     <div class='list-container wrapper'>
     </div>

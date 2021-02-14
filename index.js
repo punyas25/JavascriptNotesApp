@@ -5,12 +5,12 @@ displayNote = (note, i) => {
     var noteElement = [
         '<div class="item-wrapper" id="item-wrapper" data-noteid="',
         i,
-        '">',
+        '" onclick="expandDesc(this)">',
         '<p class="item-title">',
         note.title,
         '</p><p class="item-description">',
         note.description,
-        '</p><input type="button" id="edit-btn" value="Edit" onclick="editNote(this);"><input type="button" id="delete-btn" value="Delete" onclick="deleteNote(this);"></div>'
+        '</p><input type="button" class="edit-btn" value="Edit" onclick="editNote(this);"><input type="button" class="delete-btn" value="Delete" onclick="deleteNote(this);"></div>'
       ];
     return $(noteElement.join(''));
 }
@@ -80,4 +80,42 @@ saveEditedNote = (element) => {
     notes[noteid] = editedNote;
     localStorage.setItem('notes', JSON.stringify(notes));
     location.reload();
+}
+
+searchNote = (event) => {
+    if (event.keyCode === 13) {
+        let searchText = $('.search').val().toLowerCase();
+        let notesMatch = []
+
+        notes.forEach(note => {
+            if ( (note.title.toLowerCase().includes(searchText)) || (note.description.toLowerCase().includes(searchText)) ) {
+                notesMatch.push(note)
+            }
+        })
+
+        let newList = $();
+        notesMatch.forEach((note, i) => {
+            newList = newList.add(displayNote(note, i))
+        });
+        $('.list-container').html('');
+        $('.list-container').append(newList);
+
+        console.log(notesMatch);
+    }
+}
+
+clearSearchText = () => {
+    $('.search').html('');
+    location.reload();
+}
+
+expandDesc = (element) => {
+    let $this = $(element);
+    let $descElement = $this.find('.item-description')
+
+    if ($descElement.height() == 14) {
+        $descElement.height('auto');
+    } else {
+        $descElement.height('14px');
+    }
 }
